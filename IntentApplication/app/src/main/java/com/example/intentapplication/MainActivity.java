@@ -20,6 +20,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btn_start1 = findViewById(R.id.btn_start1);
         btn_start2 = findViewById(R.id.btn_start2);
         btn_start3 = findViewById(R.id.btn_start3);
+        btn_start1.setOnClickListener(this);
+        btn_start2.setOnClickListener(this);
+        btn_start3.setOnClickListener(this);
+
 
     }
 
@@ -27,17 +31,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Intent intent = new Intent();
         switch (view.getId()) {
             case R.id.btn_start1:
-                intent.setClass(this, Main2Activity.class);
+//                intent.setClass(this, AnotherActivity.class);
+                intent.setAction("test.open");
+                intent.addCategory("android.intent.category.DEFAULT");
                 startActivity(intent);
                 break;
             case R.id.btn_start2:
-//                intent.setClassName(this, "com.example.intentapplication.Main2Activity");
-                intent = new Intent("Intent.ACTION_DIAL");   //指定系统内置电话动作
-                intent.setData(Uri.parse("tel:10086"));    //传递参数数据
+                intent.setClassName(this, "com.example.intentapplication.AnotherActivity");
                 startActivity(intent);
                 break;
             case R.id.btn_start3:
-                intent.setClassName("com.example.helloworld", "com.example.helloworld.MainActivity");
+                intent.setClassName("com.example.helloworld", "com.example.helloworld.ClockActivity");
                 startActivity(intent);
                 break;
         }

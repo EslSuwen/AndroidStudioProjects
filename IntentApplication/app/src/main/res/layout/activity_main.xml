@@ -27,9 +27,12 @@
         android:onClick="onClick"
         android:text="Act1"
         android:textSize="40sp"
+        android:background="@drawable/button"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints,OnClick" />
+
+
 
     <Button
         android:id="@+id/btn_start2"
