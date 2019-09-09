@@ -14,6 +14,11 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.security.auth.Destroyable;
+
 public class MainActivity extends AppCompatActivity {
     private TextView tv;
 
@@ -25,6 +30,8 @@ public class MainActivity extends AppCompatActivity {
         tv = findViewById(R.id.tvInfo);
         setSupportActionBar(toolbar);
 
+        freshInfo();
+
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -32,13 +39,6 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent();
                 intent.setClass(MainActivity.this, AddActivity.class);
                 startActivity(intent);
-                StuInfo stuInfo=new StuInfo();
-                Bundle bundle=getIntent().getExtras();
-                if (bundle.get("stu")!=null){
-                    stuInfo=(StuInfo) bundle.get("stu");
-                }
-                String info=stuInfo.getName()+"--"+stuInfo.getMajor();
-                tv.setText(info);
             }
         });
 
@@ -67,5 +67,23 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    public void freshInfo() {
+        StuInfo stuInfo = new StuInfo();
+        String info="";
+        List<StuInfo> stus = new ArrayList<StuInfo>();
+
+
+        Bundle bundle = getIntent().getExtras();
+        if (bundle.get("stu") != null) {
+            stuInfo = (StuInfo) bundle.get("stu");
+            stus.add(stuInfo);
+        }
+        for(StuInfo s:stus)
+        {
+            info += stuInfo.getName() + "--" + stuInfo.getMajor()+"\n";
+        }
+
+        tv.setText(info);
+    }
 
 }
