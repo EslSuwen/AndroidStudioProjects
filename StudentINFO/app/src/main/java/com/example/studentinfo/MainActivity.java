@@ -21,6 +21,7 @@ import javax.security.auth.Destroyable;
 
 public class MainActivity extends AppCompatActivity {
     private TextView tv;
+    List<StuInfo> stus;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,8 +30,8 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         tv = findViewById(R.id.tvInfo);
         setSupportActionBar(toolbar);
+        stus = new ArrayList<StuInfo>();
 
-        freshInfo();
 
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -38,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent();
                 intent.setClass(MainActivity.this, AddActivity.class);
-                startActivity(intent);
+                startActivityForResult(intent, 0);
             }
         });
 
@@ -67,23 +68,41 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void freshInfo() {
+    @Override
+    protected void onActivityResult(int requestCode,int resultCode,Intent data){
+        super.onActivityResult(requestCode,resultCode,data);
+        if(data==null)
+            return;
+        Bundle bundle=data.getExtras();
         StuInfo stuInfo = new StuInfo();
-        String info="";
-        List<StuInfo> stus = new ArrayList<StuInfo>();
+        String info = "";
 
+        stuInfo = (StuInfo) bundle.get("stu");
+        stus.add(stuInfo);
 
-        Bundle bundle = getIntent().getExtras();
-        if (bundle.get("stu") != null) {
-            stuInfo = (StuInfo) bundle.get("stu");
-            stus.add(stuInfo);
-        }
-        for(StuInfo s:stus)
-        {
-            info += stuInfo.getName() + "--" + stuInfo.getMajor()+"\n";
+        for (StuInfo s : stus) {
+            info += s.getName() + "--" + s.getMajor() + "\n";
         }
 
         tv.setText(info);
     }
+
+//    public void freshInfo() {
+//        Bundle bundle = getIntent().getExtras();
+//
+//        if (bundle.get("stu") == null)
+//            return;
+//        StuInfo stuInfo = new StuInfo();
+//        String info = "";
+//
+//        stuInfo = (StuInfo) bundle.get("stu");
+//        stus.add(stuInfo);
+//
+//        for (StuInfo s : stus) {
+//            info += s.getName() + "--" + s.getMajor() + "\n";
+//        }
+//
+//        tv.setText(info);
+//    }
 
 }
