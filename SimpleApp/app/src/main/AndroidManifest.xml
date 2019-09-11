@@ -12,9 +12,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".NaviActivity"
-            android:label="@string/title_activity_navi"
+            android:name=".ContactsActivity"
+            android:label="@string/title_activity_contacts"
             android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".AddContactsActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
