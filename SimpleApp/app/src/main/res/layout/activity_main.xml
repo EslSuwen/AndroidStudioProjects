@@ -29,23 +29,24 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
+        android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="104dp"
-        android:layout_marginTop="340dp"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="308dp"
         android:onClick="onClickActionCall"
-        android:text="ACTION_CALL方式直接拨打"
+        android:text="直接拨打"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="92dp"
-        android:layout_marginTop="404dp"
+        android:layout_marginTop="308dp"
+        android:layout_marginEnd="80dp"
         android:onClick="onClickActionDial"
-        android:text="ACTION_DIAL方式打开拨号界面"
-        app:layout_constraintStart_toStartOf="parent"
+        android:text="拨号界面"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
@@ -56,6 +57,40 @@
         android:layout_marginTop="26dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etPhone"
-        app:srcCompat="@drawable/call" />
+        app:srcCompat="@drawable/call1" />
+
+    <ImageButton
+        android:id="@+id/IB_messages"
+        android:layout_width="66dp"
+        android:layout_height="66dp"
+        android:layout_marginTop="26dp"
+        android:layout_marginEnd="66dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etPhone"
+        app:srcCompat="@drawable/message" />
+
+    <ImageButton
+        android:id="@+id/IB_camera"
+        android:layout_width="66dp"
+        android:layout_height="66dp"
+        android:layout_marginStart="41dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="41dp"
+        app:layout_constraintEnd_toStartOf="@+id/IB_messages"
+        app:layout_constraintStart_toEndOf="@+id/IB_contacts"
+        app:layout_constraintTop_toBottomOf="@+id/etPhone"
+        app:srcCompat="@drawable/camera" />
+
+    <ImageView
+        android:id="@+id/IV_photo"
+        android:layout_width="388dp"
+        android:layout_height="264dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginBottom="80dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/ic_launcher_foreground" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

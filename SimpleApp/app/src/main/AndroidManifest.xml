@@ -3,6 +3,8 @@
     package="com.example.simpleapp">
 
     <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.SEND_SMS"/>
+    <uses-feature android:name="android.hardware.camera" />
 
     <application
         android:allowBackup="true"
@@ -15,7 +17,6 @@
             android:name=".ContactsActivity"
             android:label="@string/title_activity_contacts"
             android:theme="@style/AppTheme.NoActionBar"></activity>
-        <activity android:name=".AddContactsActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
