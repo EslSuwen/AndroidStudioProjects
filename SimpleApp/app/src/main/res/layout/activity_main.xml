@@ -4,13 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/bg"
     tools:context=".MainActivity">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="52dp"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="40dp"
         android:text="请输入要拨打的号码："
         android:textSize="30sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -21,66 +22,66 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="66dp"
-        android:layout_marginTop="124dp"
+        android:layout_marginTop="96dp"
         android:layout_marginEnd="66dp"
         android:inputType="phone"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="80dp"
-        android:layout_marginTop="308dp"
-        android:onClick="onClickActionCall"
-        android:text="直接拨打"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="308dp"
-        android:layout_marginEnd="80dp"
-        android:onClick="onClickActionDial"
-        android:text="拨号界面"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageButton
-        android:id="@+id/IB_contacts"
-        android:layout_width="66dp"
-        android:layout_height="66dp"
-        android:layout_marginStart="66dp"
-        android:layout_marginTop="26dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etPhone"
-        app:srcCompat="@drawable/call1" />
 
     <ImageButton
         android:id="@+id/IB_messages"
         android:layout_width="66dp"
         android:layout_height="66dp"
-        android:layout_marginTop="26dp"
-        android:layout_marginEnd="66dp"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="43dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="44dp"
+        app:layout_constraintEnd_toStartOf="@+id/IB_call"
+        app:layout_constraintStart_toEndOf="@+id/IB_contacts"
         app:layout_constraintTop_toBottomOf="@+id/etPhone"
         app:srcCompat="@drawable/message" />
+
+    <ImageButton
+        android:id="@+id/IB_contacts"
+        android:layout_width="66dp"
+        android:layout_height="66dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="12dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etPhone"
+        app:srcCompat="@drawable/contacts" />
+
+    <ImageButton
+        android:id="@+id/IB_call"
+        android:layout_width="66dp"
+        android:layout_height="66dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="64dp"
+        android:onClick="onClickActionCall"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etPhone"
+        app:srcCompat="@drawable/call1" />
 
     <ImageButton
         android:id="@+id/IB_camera"
         android:layout_width="66dp"
         android:layout_height="66dp"
-        android:layout_marginStart="41dp"
+        android:layout_marginStart="120dp"
         android:layout_marginTop="24dp"
-        android:layout_marginEnd="41dp"
-        android:onClick="onClick"
-        app:layout_constraintEnd_toStartOf="@+id/IB_messages"
-        app:layout_constraintStart_toEndOf="@+id/IB_contacts"
-        app:layout_constraintTop_toBottomOf="@+id/etPhone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/IB_messages"
         app:srcCompat="@drawable/camera" />
+
+    <ImageButton
+        android:id="@+id/IB_map"
+        android:layout_width="66dp"
+        android:layout_height="66dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="120dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/IB_messages"
+        app:srcCompat="@drawable/map" />
 
     <ImageView
         android:id="@+id/IV_photo"
@@ -88,7 +89,7 @@
         android:layout_height="264dp"
         android:layout_marginStart="12dp"
         android:layout_marginEnd="12dp"
-        android:layout_marginBottom="80dp"
+        android:layout_marginBottom="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
