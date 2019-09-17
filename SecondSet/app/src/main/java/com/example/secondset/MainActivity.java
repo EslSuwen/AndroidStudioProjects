@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(intent);
                 break;
             case R.id.bt3:
-                intent.setClassName("com.example.helloworld", "com.example.helloworld.MainActivity");
+                intent.setClassName("com.example.testcc", "com.example.testcc.MainActivity");
                 startActivity(intent);
                 break;
             case R.id.bt4:

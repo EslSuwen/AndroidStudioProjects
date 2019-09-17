@@ -19,7 +19,7 @@ import java.io.File;
 
 import static android.widget.Toast.*;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private EditText etPhone;
     private ImageButton IB_contacts;
@@ -52,53 +52,21 @@ public class MainActivity extends AppCompatActivity {
         IB_contacts = findViewById(R.id.IB_contacts);
         IB_messages = findViewById(R.id.IB_messages);
         IB_StartCamera = findViewById(R.id.IB_camera);
-        IV_photo = findViewById(R.id.IV_photo);
-        IV_photo.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = null;
-                /* 指定相机拍摄照片保存地址 */
-                intent = new Intent();
-                // 指定开启系统相机的Action
-                intent.setAction(MediaStore.ACTION_IMAGE_CAPTURE);
-                intent.addCategory(Intent.CATEGORY_DEFAULT);
-                // 根据文件地址创建文件
-                File file = new File(FILE_PATH);
-                if (file.exists()) {
-                    file.delete();
-                }
-                // 把文件地址转换成Uri格式
-                Uri uri = Uri.fromFile(file);
-                // 设置系统相机拍摄照片完成后图片文件的存放地址
-                intent.putExtra(MediaStore.EXTRA_OUTPUT, uri);
-                startActivityForResult(intent, 0);
-                // 不指定相机拍摄照片保存地址
-
-            }
-        });
-        IB_contacts.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent();
-                intent.setClass(MainActivity.this, ContactsActivity.class);
-                startActivityForResult(intent, 0);
-            }
-        });
-        IB_messages.setOnClickListener(listener);
+        IB_StartCamera.setOnClickListener(this);
 
 
     }
 
 
-//    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-//        super.onActivityResult(requestCode, resultCode, data);
-//        if (data == null) {
-//            etPhone.setText("1234567890");
-//            return;
-//        }
-//        String info = (String) data.getExtras().get("number");
-//        etPhone.setText(info);
-//    }
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (data == null) {
+            etPhone.setText("1234567890");
+            return;
+        }
+        String info = (String) data.getExtras().get("number");
+        etPhone.setText(info);
+    }
 
 
     // ACTION_CALL方式拨打电话(直接拨打)
@@ -117,6 +85,11 @@ public class MainActivity extends AppCompatActivity {
         call(Intent.ACTION_DIAL);
     }
 
+    public void onClick(View view) {
+        Intent intent=new Intent();
+        intent.setClass(this,PhotoActivity.class);
+    }
+
     private void call(String action) {
         String phone = etPhone.getText().toString();
         if (phone != null && phone.trim().length() > 0) {
@@ -128,44 +101,5 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    private View.OnClickListener click = new View.OnClickListener() {
 
-        @Override
-        public void onClick(View v) {
-
-            Intent intent = null;
-            /* 指定相机拍摄照片保存地址 */
-            intent = new Intent();
-            // 指定开启系统相机的Action
-            intent.setAction(MediaStore.ACTION_IMAGE_CAPTURE);
-            intent.addCategory(Intent.CATEGORY_DEFAULT);
-            // 根据文件地址创建文件
-            File file = new File(FILE_PATH);
-            if (file.exists()) {
-                file.delete();
-            }
-            // 把文件地址转换成Uri格式
-            Uri uri = Uri.fromFile(file);
-            // 设置系统相机拍摄照片完成后图片文件的存放地址
-            intent.putExtra(MediaStore.EXTRA_OUTPUT, uri);
-            startActivityForResult(intent, 0);
-            // 不指定相机拍摄照片保存地址
-        }
-
-    };
-
-
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        Log.i(TAG, "系统相机拍照完成，resultCode=" + resultCode);
-
-        if (requestCode == 0) {
-            File file = new File(FILE_PATH);
-            Uri uri = Uri.fromFile(file);
-            IV_photo.setImageURI(uri);
-        } else if (requestCode == 1) {
-            Log.i(TAG, "默认content地址：" + data.getData());
-            IV_photo.setImageURI(data.getData());
-        }
-    }
 };
