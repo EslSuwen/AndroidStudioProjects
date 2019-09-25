@@ -2,6 +2,7 @@ package com.example.listviewapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -55,13 +56,37 @@ public class MainActivity extends AppCompatActivity implements
         int position = (int) view.getTag();
         switch (view.getId()) {
             case R.id.edit:
-                Toast.makeText(this, "编辑" + position, Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent();
+                Student stu=students.get(position);
+                intent.putExtra("stu",stu);
+                intent.putExtra("position",position);
+                intent.setClass(MainActivity.this, EditActivity.class);
+                startActivityForResult(intent, 0);
+//                Student stu=new Student("TBD","TBD");
+//                students.set(position,stu);
+//                stuAdapater.notifyDataSetChanged();//适配器更新数据
+//                Toast.makeText(this, "已编辑" + position, Toast.LENGTH_SHORT).show();
                 break;
             case R.id.delete:
                 students.remove(position);//删除集合
                 stuAdapater.notifyDataSetChanged();//适配器更新数据
-                Toast.makeText(this, "删除" + position, Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "已删除" + position, Toast.LENGTH_SHORT).show();
                 break;
         }
     }
+    @Override
+    protected void onActivityResult(int requestCode,int resultCode,Intent data){
+        super.onActivityResult(requestCode,resultCode,data);
+        if(data==null)
+            return;
+        Bundle bundle=data.getExtras();
+        Student stu =(Student) bundle.get("stu");
+        int position=(int)bundle.get("position");
+
+
+        students.set(position,stu);
+        stuAdapater.notifyDataSetChanged();//适配器更新数据
+        Toast.makeText(this, "已编辑" + position, Toast.LENGTH_SHORT).show();
+    }
+
 }

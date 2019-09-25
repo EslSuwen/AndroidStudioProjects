@@ -29,7 +29,7 @@ public class AddActivity extends AppCompatActivity {
                 Editable name = etName.getText();
                 Editable major = etMajor.getText();
                 stu.setName(name.toString());
-                stu.setMajor(name.toString());
+                stu.setMajor(major.toString());
                 intent.putExtra("stu", stu);
                 setResult(0, intent);
                 finish();

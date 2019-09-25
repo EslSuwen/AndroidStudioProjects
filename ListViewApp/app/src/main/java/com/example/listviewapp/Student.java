@@ -24,9 +24,7 @@ public class Student implements Serializable {
         this.major = major;
     }
 
-    public String getName() {
-        return name;
-    }
+    public String getName() { return name; }
 
     public String getMajor() {
         return major;
