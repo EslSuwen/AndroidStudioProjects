@@ -54,7 +54,7 @@ public class StuAdapater extends BaseAdapter implements View.OnClickListener{
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
 //创建一个 view 对象（item），对象的样式采用自定义的 layout 样式
-        View stuView =View.inflate(stuContext,R.layout.myliststly,null);
+        View stuView = View.inflate(stuContext, R.layout.list_view, null);
 ///获得 item 的每个子元素
         TextView tv_name=stuView.findViewById(R.id.name);
         TextView tv_major=stuView.findViewById(R.id.major);
