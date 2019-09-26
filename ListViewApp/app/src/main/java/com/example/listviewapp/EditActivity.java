@@ -12,7 +12,7 @@ import android.widget.EditText;
 public class EditActivity extends AppCompatActivity {
     EditText et_name;
     EditText et_major;
-    Button btn_confirm;
+    Button btn_edit;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,8 +26,8 @@ public class EditActivity extends AppCompatActivity {
         et_major = findViewById(R.id.edit_major);
         et_name.setText(stu.getName());
         et_major.setText(stu.getMajor());
-        btn_confirm = findViewById(R.id.btn_confirm);
-        btn_confirm.setOnClickListener(new View.OnClickListener() {
+        btn_edit = findViewById(R.id.btn_edit);
+        btn_edit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent();

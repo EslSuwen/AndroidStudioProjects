@@ -35,6 +35,8 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Major"
+        android:background="@drawable/edit_bg"
+        android:gravity="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -46,6 +48,8 @@
         android:layout_marginTop="200dp"
         android:ems="10"
         android:inputType="textPersonName"
+        android:background="@drawable/edit_bg"
+        android:gravity="center"
         android:text="Name"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -57,7 +61,8 @@
         android:layout_marginBottom="317dp"
         android:textSize="25sp"
         android:text="确认"
-        android:id="@+id/btn_confirm"
+        android:background="@drawable/btn_shape3"
+        android:id="@+id/btn_edit"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
