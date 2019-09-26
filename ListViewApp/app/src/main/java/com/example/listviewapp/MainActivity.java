@@ -6,11 +6,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Spinner;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -30,8 +28,8 @@ public class MainActivity extends AppCompatActivity implements
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         studentList =findViewById(R.id.studentList);
-        spinner_sex = findViewById(R.id.spinner_sex);
-        spinner_major = findViewById(R.id.spinner_major);
+        spinner_sex = findViewById(R.id.edit_sex);
+        spinner_major = findViewById(R.id.edit_major);
         iv_add = findViewById(R.id.iv_add);
         iv_add.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -107,10 +105,10 @@ public class MainActivity extends AppCompatActivity implements
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
+        if (data == null)
+            return;
         switch (resultCode) {
             case 0:
-                if (data == null)
-                    return;
                 Bundle bundle = data.getExtras();
                 Student stu = (Student) bundle.get("stu");
                 int position = (int) bundle.get("position");
@@ -119,6 +117,10 @@ public class MainActivity extends AppCompatActivity implements
                 Toast.makeText(this, "已编辑" + position, Toast.LENGTH_SHORT).show();
                 break;
             case 1:
+                Bundle bundle1 = data.getExtras();
+                Student stu1 = (Student) bundle1.get("stu");
+                students.add(stu1);
+                stuAdapater.notifyDataSetChanged();
                 break;
         }
 

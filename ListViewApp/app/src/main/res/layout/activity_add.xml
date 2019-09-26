@@ -29,7 +29,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
     <Spinner
-        android:id="@+id/spinner_major"
+        android:id="@+id/edit_major"
         android:layout_width="180dp"
         android:layout_height="40dp"
         android:layout_marginStart="40dp"
@@ -60,7 +60,7 @@
         android:gravity="center"
         android:background="@drawable/edit_bg"
         app:layout_constraintStart_toEndOf="@+id/textView4"
-        app:layout_constraintTop_toBottomOf="@+id/spinner_major" />
+        app:layout_constraintTop_toBottomOf="@+id/edit_major" />
 
     <EditText
         android:id="@+id/edit_name"
@@ -87,7 +87,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Spinner
-        android:id="@+id/spinner_sex"
+        android:id="@+id/edit_sex"
         android:layout_width="180dp"
         android:layout_height="40dp"
         android:layout_marginStart="40dp"
@@ -97,7 +97,7 @@
         app:layout_constraintTop_toBottomOf="@+id/edit_age" />
 
     <Button
-        android:id="@+id/btn_confirm"
+        android:id="@+id/btn_edit"
         android:layout_width="120dp"
         android:layout_height="50dp"
         android:layout_marginStart="144dp"
@@ -109,7 +109,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinner_sex" />
+        app:layout_constraintTop_toBottomOf="@+id/edit_sex" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
