@@ -3,6 +3,7 @@ package com.example.listviewapp;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -20,16 +21,16 @@ public class MainActivity extends AppCompatActivity implements
     private StuAdapater stuAdapater;
     private List<Student> students;
     private ImageView iv_add;
-    private Spinner spinner_sex;
-    private Spinner spinner_major;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        // 锁定屏幕
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         setContentView(R.layout.activity_main);
+
         studentList =findViewById(R.id.studentList);
-        spinner_sex = findViewById(R.id.edit_sex);
-        spinner_major = findViewById(R.id.edit_major);
         iv_add = findViewById(R.id.iv_add);
         iv_add.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -44,9 +45,9 @@ public class MainActivity extends AppCompatActivity implements
 构造一组学生的集合
 */
         students = new ArrayList<>();
-        Student s1 = new Student("李四", "物联网工程");
-        Student s2 = new Student("王五", "物联网工程");
-        Student s3 = new Student("张三", "计算机科学与技术");
+        Student s1 = new Student("李四","21","男","信息科学与工程学院","计算机科学与技术","2017-9-1",null);
+        Student s2 = new Student("王五","21","男","信息科学与工程学院", "物联网工程","2017-9-1",null);
+        Student s3 = new Student("张三","21","男","信息科学与工程学院", "计算机科学与技术","2017-9-1",null);
         students.add(s1);
         students.add(s2);
         students.add(s3);
