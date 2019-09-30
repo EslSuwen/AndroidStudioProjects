@@ -21,7 +21,7 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical" >
 
-                <com.ljp.ani01.MyImageView
+                <com.example.testmetro.MyImageView
                     android:id="@+id/c_joke"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -29,7 +29,7 @@
                     android:scaleType="matrix"
                     android:src="@drawable/left_top" />
 
-                <com.ljp.ani01.MyImageView
+                <com.example.testmetro.MyImageView
                     android:id="@+id/c_idea"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -38,7 +38,7 @@
                     android:src="@drawable/left_bottom" />
             </LinearLayout>
 
-            <com.ljp.ani01.MyImageView
+            <com.example.testmetro.MyImageView
                 android:id="@+id/c_constellation"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -47,7 +47,7 @@
                 android:src="@drawable/right" />
         </LinearLayout>
 
-        <com.ljp.ani01.MyImageView
+        <com.example.testmetro.MyImageView
             android:id="@+id/c_recommend"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
