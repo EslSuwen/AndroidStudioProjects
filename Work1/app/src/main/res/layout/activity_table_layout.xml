@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TableLayout">
+
+    <TableLayout
+        android:id="@+id/tableLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorAccent"
+        android:shrinkColumns="0,1,2"
+        tools:ignore="MissingConstraints">
+
+        <Button android:text="独占一行" />
+
+
+        <TableRow>
+
+            <Button
+                android:text="00000000000000000"
+                android:textSize="30sp" />
+
+            <Button
+                android:text="111111111111111"
+                android:textSize="30sp" />
+
+            <Button
+                android:text="222222222222222"
+                android:textSize="30sp" />
+        </TableRow>
+
+        <TableRow>
+
+            <Button
+                android:text="2222222222222222"
+                android:textSize="30sp" />
+
+            <Button
+                android:layout_span="2"
+                android:text="我占两列"
+                android:textSize="30sp" />
+        </TableRow>
+    </TableLayout>
+
+    <TableLayout
+        android:id="@+id/tableLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffcd6b"
+        android:shrinkColumns="0.1"
+        android:stretchColumns="0.1"
+        app:layout_constraintTop_toBottomOf="@+id/tableLayout"
+       >
+
+        <TableRow>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="填充一"
+                android:textSize="30sp"/>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="填充二"
+                android:textSize="30sp"/>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="填充三"
+                android:textSize="30sp"/>
+        </TableRow>
+    </TableLayout>
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:shrinkColumns="0,1,2"
+
+        android:stretchColumns="0,1,2"
+        app:layout_constraintTop_toBottomOf="@+id/tableLayout2"
+        >
+
+        <TableRow>
+
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="200dp"
+                android:src="@drawable/stu1" />
+
+            <ImageView android:src="@drawable/stu"
+                android:layout_width="100dp"
+                android:layout_height="200dp"/>
+
+            <ImageView android:src="@drawable/stu2"
+                android:layout_width="100dp"
+                android:layout_height="200dp"/>
+        </TableRow>
+    </TableLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
