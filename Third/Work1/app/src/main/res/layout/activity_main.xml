@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/c"
+        android:layout_width="140dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="30dp"
+        android:layout_gravity="center"
+        android:text="线性布局-计算器"
+/>
+
+    <Button
+        android:id="@+id/btn_2"
+        android:layout_width="140dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="30dp"
+        android:layout_gravity="center"
+        android:text="框架布局"
+ />
+
+    <Button
+        android:id="@+id/btn_3"
+        android:layout_width="140dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="30dp"
+        android:layout_gravity="center"
+        android:text="绝对布局-登陆" />
+
+    <Button
+        android:id="@+id/btn_4"
+        android:layout_width="140dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="30dp"
+        android:layout_gravity="center"
+        android:text="表格布局"/>
+
+    <Button
+        android:id="@+id/btn_5"
+        android:layout_width="140dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="30dp"
+        android:layout_gravity="center"
+        android:text="界面" />
+</LinearLayout>
