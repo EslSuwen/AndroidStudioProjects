@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/logintop_roundbg"
+    android:padding="5dp">
+
+    <EditText
+        android:id="@+id/et_Name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:drawable/edit_text"
+        android:drawableLeft="@drawable/user"
+        android:drawablePadding="10dp"
+        android:ems="10"
+        android:hint="@string/eTName">
+
+        <requestFocus />
+    </EditText>
+
+    <EditText
+        android:id="@+id/et_Pass"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/et_Name"
+        android:background="@android:drawable/edit_text"
+        android:drawableLeft="@drawable/passwd"
+        android:drawablePadding="10dp"
+        android:ems="10"
+        android:hint="@string/eTPass"
+        android:inputType="textPassword">
+
+        <requestFocus />
+    </EditText>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/et_Pass"
+        android:orientation="horizontal">
+
+        <CheckBox
+            android:id="@+id/cbIsRememberPass"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="记住密码"
+            android:textSize="20sp" />
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="1"
+            android:onClick="login"
+            android:text="@string/btnLogin" />
+    </LinearLayout>
+</RelativeLayout>
