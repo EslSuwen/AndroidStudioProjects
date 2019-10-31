@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="@drawable/b1">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <EditText
+            android:layout_marginTop="100dp"
+            android:id="@+id/et_name"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="name"
+            android:background="@drawable/shape"
+            android:layout_gravity="center"/>
+
+      <RadioGroup
+          android:id="@+id/rg_sex"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:orientation="horizontal">
+          <RadioButton
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_marginLeft="100dp"
+              android:text="男"/>
+          <RadioButton
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="女"
+              android:layout_marginLeft="80dp"/>
+      </RadioGroup>
+
+        <EditText
+            android:id="@+id/et_date"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="入学时间"
+            android:background="@drawable/shape"
+            android:layout_marginTop="5dp"
+            android:layout_gravity="center"/>
+
+        <EditText
+            android:id="@+id/et_age"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="age"
+            android:background="@drawable/shape"
+            android:layout_marginTop="10dp"
+            android:layout_gravity="center"
+            android:singleLine="true"
+            android:numeric="integer"/>
+
+        <Spinner
+            android:id="@+id/academy"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/shape"
+            android:layout_marginTop="5dp"
+            android:layout_gravity="center"
+            android:hint="academy">
+        </Spinner>
+        <AutoCompleteTextView
+            android:id="@+id/et_major"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="major"
+            android:inputType="text"
+            android:background="@drawable/shape"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"/>
+
+
+
+
+
+        <RelativeLayout
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/bt_add"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="80dp"
+                android:text="添加" />
+
+            <Button
+                android:id="@+id/bt_send"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="200dp"
+                android:text="提交" />
+
+        </RelativeLayout>
+    </LinearLayout>
+
+</LinearLayout>
