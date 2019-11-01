@@ -88,7 +88,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         logicTv.setOnClickListener(this);
         onlineTv.setOnClickListener(this);
         menuImagv.setOnClickListener(this);
-        seachImagv.setOnClickListener(this);
     }
 
     private void bangdingID() {

@@ -2,11 +2,13 @@ package com.example.shaoyangyang.mymusicdemo.fragment;
 
 
 import android.Manifest;
+import android.app.Dialog;
 import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.ContentResolver;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Bitmap;
@@ -18,6 +20,7 @@ import android.provider.MediaStore;
 import android.support.annotation.NonNull;
 import android.support.annotation.RequiresApi;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.AlertDialog;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -89,12 +92,34 @@ public class LogicFragment extends Fragment {
 
         //对Listview进行监听
         listView = view.findViewById(R.id.logic_lv);
+        listView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(AdapterView<?> adapterView, View view, int i, long l) {
+                final View view1 = LayoutInflater.from(getContext()).inflate(R.layout.dialog2_layout, null);
+                final AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
+                builder.setTitle("已成功删除！");
+                builder.setView(view1);
+                builder.show();
+
+                for(int index=0;i<Common.musicList.size();index++){
+                    if(index==i){
+//                        listView.removeView(Common.musicList.get(index));
+                        listView.removeViewInLayout(view);
+                        Common.musicList.remove(index);
+                        adapter.notifyDataSetChanged();
+                        return true;
+                    }
+                }
+                return true;
+//                return false;
+            }
+        });
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {             //将listView的每一个item实现监听
             @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 for (Music m : Common.musicList
-                        ) {
+                ) {
                     m.isPlaying = false;
                 }
                 Common.musicList.get(position).isPlaying = true;
@@ -130,6 +155,7 @@ public class LogicFragment extends Fragment {
         });
 
         adapter = new MusicAdapter(getActivity(), musicList);                //创建MusicAdapter的对象，实现自定义适配器的创建
+        adapter.notifyDataSetChanged();
         listView.setAdapter(adapter);                                                 //listView绑定适配器
         return view;
     }
@@ -152,7 +178,7 @@ public class LogicFragment extends Fragment {
         //获取游标
         Cursor cursor = resolver.query(MediaStore.Audio.Media.EXTERNAL_CONTENT_URI, null, null, null, null); //创建游标MediaStore.Audio.Media.EXTERNAL_CONTENT_URI获取音频的文件，后面的是关于select筛选条件，这里填土null就可以了
         //游标归零
-        if(cursor.moveToFirst()){
+        if (cursor.moveToFirst()) {
             do {
                 String title = cursor.getString(cursor.getColumnIndex(MediaStore.Audio.Media.TITLE));            //获取歌名
                 String artist = cursor.getString(cursor.getColumnIndex(MediaStore.Audio.Media.ARTIST));         //获取歌唱者

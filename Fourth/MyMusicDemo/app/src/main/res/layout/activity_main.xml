@@ -11,7 +11,7 @@
         android:id="@+id/main_top_linlayout"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:background="#00FA9A">
+        android:background="#cccccc">
 
         <LinearLayout
             android:layout_width="0dp"
@@ -24,11 +24,11 @@
 
                 <ImageView
                     android:id="@+id/main_menu_imgv"
-                    android:layout_width="0dp"
-                    android:layout_height="0dp"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
                     android:layout_centerVertical="true"
                     android:layout_marginLeft="15dp"
-                    android:src="@mipmap/ic_menu" />
+                    android:src="@drawable/music" />
 
                 <TextView
                     android:id="@+id/main_logic_tv"
@@ -36,10 +36,10 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
                     android:layout_centerVertical="true"
-                    android:layout_marginRight="85dp"
+                    android:layout_marginRight="8dp"
                     android:text="我的音乐"
                     android:textColor="@color/white"
-                    android:textSize="25dp" />
+                    android:textSize="35dp" />
 
 
             </RelativeLayout>
@@ -62,7 +62,6 @@
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:layout_marginLeft="10dp"
-                    android:text="在线音乐"
                     android:textColor="@color/white_60P"
                     android:textSize="0dp" />
 
