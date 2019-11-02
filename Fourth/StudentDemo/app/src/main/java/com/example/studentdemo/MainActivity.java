@@ -52,6 +52,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        startActivity(new Intent(MainActivity.this, StudentList.class));
+
 
         bt_add = (Button) findViewById(R.id.bt_add);
         bt_send = (Button) findViewById(R.id.bt_send);
