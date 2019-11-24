@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="oval"
+    android:useLevel="false">
+    <!--这里设置badge的颜色-->
+    <solid android:color="@color/colorAccent" />
+    <!--这里设置badge的大小-->
+    <size
+        android:width="50dp"
+        android:height="50dp" />
+</shape>

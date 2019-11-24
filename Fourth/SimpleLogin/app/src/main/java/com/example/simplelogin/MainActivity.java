@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
     public void login(View view){
          String name=etName.getText().toString();
          String pass=etPass.getText().toString();
-         if("admin".equals(name)&&"admin".equals(pass)){
+         if("123".equals(name)&&"123".equals(pass)){
              SharedPreferences.Editor editor=sharedPreferences.edit();
              if(cbIsRememberPass.isChecked()){
                  editor.putBoolean("remenberpass",true);

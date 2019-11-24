@@ -19,7 +19,7 @@
             android:layout_marginTop="10dp"
             android:gravity="center"
             android:text="学生信息管理"
-            android:textColor="#cf5c0a"
+            android:textColor="#F3F1F1"
             android:textSize="30dp" />
 
         <EditText
@@ -39,6 +39,7 @@
             android:layout_below="@+id/tv"
             android:layout_marginLeft="5dp"
             android:layout_toRightOf="@+id/search_id"
+            android:background="@drawable/btn_bg"
             android:text="添加"/>
 
 
@@ -49,6 +50,7 @@
             android:layout_below="@+id/tv"
             android:layout_marginLeft="2dp"
             android:layout_toRightOf="@+id/sl_add"
+            android:background="@drawable/btn_bg"
             android:text="查询"/>
 
 

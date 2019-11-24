@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_pressed="false"><!--没点击按钮的时候-->
+        <shape android:shape="rectangle"><!--按钮形状-->
+            <corners
+                android:bottomLeftRadius="20dp"
+                android:bottomRightRadius="20dp"
+                android:topLeftRadius="20dp"
+                android:topRightRadius="20dp" />
+            <solid android:color="#7A7A7A" /><!--按钮背景填充色-->
+            <stroke
+                android:width="0dp"
+                /><!--按钮边框-->
+        </shape>
+    </item>
+
+    <!--当点击按钮的时候变为蓝色-->
+    <item  android:state_pressed="true" >
+        <shape android:shape="rectangle"><!--按钮形状-->
+            <corners
+                android:bottomLeftRadius="20dp"
+                android:bottomRightRadius="20dp"
+                android:topLeftRadius="20dp"
+                android:topRightRadius="20dp" />
+            <solid android:color="@color/colorPrimary" />
+            <stroke
+                android:width="0dp"
+                /><!--按钮边框-->
+        </shape>
+    </item>
+
+
+</selector>

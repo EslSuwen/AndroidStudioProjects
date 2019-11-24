@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    android:background="@drawable/b1">
+    android:background="@drawable/b1"
+    tools:context=".MainActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -13,82 +13,81 @@
         android:orientation="vertical">
 
         <EditText
-            android:layout_marginTop="100dp"
             android:id="@+id/et_name"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="100dp"
             android:layout_weight="1"
-            android:hint="name"
             android:background="@drawable/shape"
-            android:layout_gravity="center"/>
+            android:hint="name" />
 
-      <RadioGroup
-          android:id="@+id/rg_sex"
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:orientation="horizontal">
-          <RadioButton
-              android:layout_width="wrap_content"
-              android:layout_height="wrap_content"
-              android:layout_marginLeft="100dp"
-              android:text="男"/>
-          <RadioButton
-              android:layout_width="wrap_content"
-              android:layout_height="wrap_content"
-              android:text="女"
-              android:layout_marginLeft="80dp"/>
-      </RadioGroup>
+        <RadioGroup
+            android:id="@+id/rg_sex"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="100dp"
+                android:text="男" />
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="80dp"
+                android:text="女" />
+        </RadioGroup>
 
         <EditText
             android:id="@+id/et_date"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:hint="入学时间"
-            android:background="@drawable/shape"
+            android:layout_gravity="center"
             android:layout_marginTop="5dp"
-            android:layout_gravity="center"/>
+            android:layout_weight="1"
+            android:background="@drawable/shape"
+            android:hint="入学时间" />
 
         <EditText
             android:id="@+id/et_age"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:hint="age"
-            android:background="@drawable/shape"
-            android:layout_marginTop="10dp"
             android:layout_gravity="center"
-            android:singleLine="true"
-            android:numeric="integer"/>
+            android:layout_marginTop="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/shape"
+            android:hint="age"
+            android:numeric="integer"
+            android:singleLine="true" />
 
         <Spinner
             android:id="@+id/academy"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
-            android:background="@drawable/shape"
-            android:layout_marginTop="5dp"
             android:layout_gravity="center"
-            android:hint="academy">
-        </Spinner>
+            android:layout_marginTop="5dp"
+            android:background="@drawable/shape"
+            android:hint="academy"></Spinner>
+
         <AutoCompleteTextView
             android:id="@+id/et_major"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:hint="major"
-            android:inputType="text"
-            android:background="@drawable/shape"
             android:layout_gravity="center"
-            android:layout_marginTop="5dp"/>
-
-
-
+            android:layout_marginTop="5dp"
+            android:layout_weight="1"
+            android:background="@drawable/shape"
+            android:hint="major"
+            android:inputType="text" />
 
 
         <RelativeLayout
-            android:layout_marginTop="20dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
             android:orientation="horizontal">
 
             <Button
@@ -96,6 +95,7 @@
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="80dp"
+                android:background="@drawable/btn_bg"
                 android:text="添加" />
 
             <Button
@@ -103,6 +103,7 @@
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="200dp"
+                android:background="@drawable/btn_bg"
                 android:text="提交" />
 
         </RelativeLayout>

@@ -6,12 +6,14 @@
     android:padding="5dp">
 
     <EditText
+        android:layout_marginTop="200dp"
         android:id="@+id/et_Name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@android:drawable/edit_text"
         android:drawableLeft="@drawable/user"
         android:drawablePadding="10dp"
+        android:textColor="#000000"
         android:ems="10"
         android:hint="@string/eTName">
 
@@ -28,6 +30,7 @@
         android:drawablePadding="10dp"
         android:ems="10"
         android:hint="@string/eTPass"
+        android:textColor="#000000"
         android:inputType="textPassword">
 
         <requestFocus />
