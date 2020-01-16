@@ -11,9 +11,7 @@
         android:roundIcon="@drawable/camera"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
-        <activity android:name=".PhotoActivity"></activity>
-        <activity android:name=".LoginActivity" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".PhotoActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
