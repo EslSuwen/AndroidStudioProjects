@@ -16,14 +16,15 @@ import org.w3c.dom.Text;
 
 import java.util.List;
 
-public class StudentAdapter extends BaseAdapter implements View.OnClickListener{
+public class StudentAdapter extends BaseAdapter implements View.OnClickListener {
     private List<StuInfo> stuDates;
     private Context stuContext;
     private InnerItemOnClickListener innerItemOnClickListener;
-    DBop dbOperate=new DBop();
-    public StudentAdapter(Context context,List list) {
-        this.stuDates=list;
-        this.stuContext=context;
+    DBop dbOperate = new DBop();
+
+    public StudentAdapter(Context context, List list) {
+        this.stuDates = list;
+        this.stuContext = context;
         dbOperate.test(context);
     }
 
@@ -44,15 +45,15 @@ public class StudentAdapter extends BaseAdapter implements View.OnClickListener{
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-       View stuView=View.inflate(stuContext,R.layout.list,null);
+        View stuView = View.inflate(stuContext, R.layout.list, null);
 
-       TextView tv_id=stuView.findViewById(R.id.li_id);
-       TextView tv_name=stuView.findViewById(R.id.li_name);
-        TextView tv_academy=stuView.findViewById(R.id.li_academy);
-        ImageView iv_edit=stuView.findViewById(R.id.li_edit);
-        ImageView iv_delete=stuView.findViewById(R.id.li_delete);
+        TextView tv_id = stuView.findViewById(R.id.li_id);
+        TextView tv_name = stuView.findViewById(R.id.li_name);
+        TextView tv_academy = stuView.findViewById(R.id.li_academy);
+        ImageView iv_edit = stuView.findViewById(R.id.li_edit);
+        ImageView iv_delete = stuView.findViewById(R.id.li_delete);
 
-       final StuInfo student=(StuInfo) stuDates.get(position);
+        final StuInfo student = (StuInfo) stuDates.get(position);
 
         tv_id.setText(String.valueOf(student.getId()));
         tv_name.setText(student.getName());
@@ -67,11 +68,11 @@ public class StudentAdapter extends BaseAdapter implements View.OnClickListener{
             @Override
             public void onClick(View v) {
 
-                Context context=v.getContext();
-                Intent intent=new Intent();
-                intent.setClass(context,Edit.class);
-                intent.putExtra("altStu",student);
-                ((Activity)context).startActivity(intent);
+                Context context = v.getContext();
+                Intent intent = new Intent();
+                intent.setClass(context, Edit.class);
+                intent.putExtra("altStu", student);
+                ((Activity) context).startActivity(intent);
             }
         });
 
@@ -92,14 +93,14 @@ public class StudentAdapter extends BaseAdapter implements View.OnClickListener{
 
 
     //创建内部控件监听接口
-    interface  InnerItemOnClickListener{
-        abstract  void itemClick(View view);
+    interface InnerItemOnClickListener {
+        abstract void itemClick(View view);
     }
 
-    public void setOnInnerOnClickListenner(InnerItemOnClickListener listener)
-    {
-        this.innerItemOnClickListener=listener;
+    public void setOnInnerOnClickListenner(InnerItemOnClickListener listener) {
+        this.innerItemOnClickListener = listener;
     }
+
     @Override
     public void onClick(View v) {
         innerItemOnClickListener.itemClick(v);

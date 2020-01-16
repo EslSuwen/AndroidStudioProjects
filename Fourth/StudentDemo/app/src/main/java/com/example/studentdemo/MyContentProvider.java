@@ -19,11 +19,11 @@ public class MyContentProvider extends ContentProvider {
     @Override
     public Cursor query(@NonNull Uri uri, @Nullable String[] projection, @Nullable String selection, @Nullable String[] selectionArgs, @Nullable String sortOrder) {
 
-        MySQLiteAccess database=new MySQLiteAccess(this.getContext(),3);
-        SQLiteDatabase sqLiteDatabase=database.getReadableDatabase();
+        MySQLiteAccess database = new MySQLiteAccess(this.getContext(), 3);
+        SQLiteDatabase sqLiteDatabase = database.getReadableDatabase();
 
-        String sql="select *from students ";
-        Cursor cursor=sqLiteDatabase.rawQuery(sql,null);
+        String sql = "select *from students ";
+        Cursor cursor = sqLiteDatabase.rawQuery(sql, null);
         System.out.println("查询成功！");
         return cursor;
     }

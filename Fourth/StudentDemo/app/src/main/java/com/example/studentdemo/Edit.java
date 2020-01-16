@@ -144,7 +144,7 @@ public class Edit extends AppCompatActivity implements View.OnClickListener, Tim
                     dBop.update(altStu);
 
 
-                    sendSMS("13060234317","信息更新了！");
+                    sendSMS("13060234317", "信息更新了！");
 
                 }
                 intent.setClass(this, StudentList.class);
@@ -184,12 +184,11 @@ public class Edit extends AppCompatActivity implements View.OnClickListener, Tim
         String[] arr = {"信息科学与工程学院", "土木学院", "经济与管理学院", "车辆工程学院", "建筑与城市规划学院"};
         ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, arr);
         academyspinner.setAdapter(arrayAdapter);
-        for (int i = 0; i < arr.length ; i++) {
+        for (int i = 0; i < arr.length; i++) {
 
-         System.out.println("哈哈哈哈哈哈"+arr[i]+i);
+            System.out.println("哈哈哈哈哈哈" + arr[i] + i);
 
-           if(arr[i].equals(aca))
-            {
+            if (arr[i].equals(aca)) {
                 academyspinner.setSelection(i);
             }
 
@@ -213,7 +212,6 @@ public class Edit extends AppCompatActivity implements View.OnClickListener, Tim
     }
 
 
-
     public void sendSMS(String phoneNumber, String message) {
         Intent sentIntent = new Intent("SENT_SMS_ACTION");
         //ntPI = PendingIntent.getBroadcast(this, 0, sentIntent, 0);
@@ -229,8 +227,7 @@ public class Edit extends AppCompatActivity implements View.OnClickListener, Tim
                 smsManager.sendTextMessage(phoneNumber, null, text, PendingIntent.getBroadcast(this, 0, sentIntent, 0),
                         PendingIntent.getBroadcast(this, 0, deliverIntent, 0));
             }
-        }
-        catch (Exception e){
+        } catch (Exception e) {
 
         }
     }

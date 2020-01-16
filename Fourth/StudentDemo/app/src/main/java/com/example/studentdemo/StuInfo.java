@@ -10,7 +10,7 @@ public class StuInfo implements Serializable {
     private String kecheng;
     private String academy;
     private String date;
-    private  int id;
+    private int id;
 
     public StuInfo(String n, String m, String a, String s, String k, String aca, String t) {
         name = n;
@@ -23,7 +23,7 @@ public class StuInfo implements Serializable {
 
     }
 
-    public StuInfo(String n,  String s, String a, String aca,String m, String t) {
+    public StuInfo(String n, String s, String a, String aca, String m, String t) {
         name = n;
         major = m;
         age = a;
@@ -33,8 +33,8 @@ public class StuInfo implements Serializable {
 
     }
 
-    public StuInfo(int i, String n,  String s, String a, String aca,String m, String t) {
-        id=i;
+    public StuInfo(int i, String n, String s, String a, String aca, String m, String t) {
+        id = i;
         name = n;
         major = m;
         age = a;
@@ -51,13 +51,14 @@ public class StuInfo implements Serializable {
 
     }
 
-    public int getId()
-    {return id;}
-
-    public void setId(int id)
-    {
-        this.id=id;
+    public int getId() {
+        return id;
     }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
     public String getName() {
         return name;
     }
